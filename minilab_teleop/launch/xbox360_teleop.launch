@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<launch>
+  <!--
+    Push the left frontal button labeled as 'LB' to activate cmd_vel publishing.
+    Move the left stick around to control the velocity.
+   -->
+  <!--  smooths inputs from cmd_vel_mux/input/teleop_raw to cmd_vel_mux/input/teleop -->
+  <!-- include file="$(find minilab_teleop)/launch/includes/velocity_smoother.launch.xml"/ -->
+  
+  <node pkg="joy" type="joy_node" name="joystick" output="screen" respawn="true">
+  	<param name="dev" type="string" value="/dev/input/js1" />
+  </node>
+  <node pkg="minilab_teleop" type="minilab_joy" name="minilab_joy" />
+
+</launch>

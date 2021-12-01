@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<!-- Launch this command on the hardware robot via ssh before : roslaunch minilab_launch minilab_driver_camera.launch 
+	or roslaunch minilab_launch minilab_driver_hokuyo.launch -->
+	
+<!-- sudo ntpdate 192.168.0.100 if there is a synchronisation issue between tf -->
+
+<launch>
+
+	<node pkg="minilab_teleop" type="keyboard_teleop_ZQSD" name="keyboard_teleop_ZQSD"  output="screen"/>
+	
+	<node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" />
+	
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find minilab_navigation)/gmapping.rviz" />
+</launch>

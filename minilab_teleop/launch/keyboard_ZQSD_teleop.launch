@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<launch>
+	<node pkg="minilab_teleop" type="keyboard_teleop_ZQSD" name="keyboard_teleop_ZQSD"  output="screen">
+		<!-- Uncomment the line below if you want to teleop the turtlesim -->
+		<!--remap from="cmd_vel" to="turtle1/cmd_vel"/--> 
+	</node>
+</launch>

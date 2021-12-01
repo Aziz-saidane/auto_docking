@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<launch>
+	<arg name="map" default="buvette" />
+	<include file="$(find minilab_simulation)/launch/minilab_simulation.launch" >
+		<arg name="map" value="$(arg map)" />
+	</include>
+
+	<node pkg="minilab_teleop" type="keyboard_teleop_ZQSD" name="keyboard_teleop_ZQSD"  output="screen"/>
+	
+	<node pkg="gmapping" type="slam_gmapping" name="slam_gmapping"> 
+		<param name="delta" value="0.025" />
+		<param name="xmin" value="-20" />
+		<param name="xmax" value="20" />
+		<param name="ymin" value="-20" />
+		<param name="ymax" value="20" />
+	</node>
+	
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find minilab_navigation)/gmapping.rviz" />
+</launch>

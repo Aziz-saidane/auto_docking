@@ -1,0 +1,22 @@
+<!-- -*- xml -*- -->
+<launch>
+  <param name="/camera_prefix" type="string" value="/" />
+
+  <!-- Launch the tracking node -->
+  <node pkg="visp_auto_tracker" type="visp_auto_tracker" name="visp_auto_tracker">
+    <param name="model_path" type="string" value="$(find visp_auto_tracker)/models" />
+    <param name="model_name" type="string" value="pattern" />
+    <param name="debug_display" value="True" />
+	      
+    <remap from="/visp_auto_tracker/camera_info" to="/camera/rgb/camera_info"/>
+    <remap from="/visp_auto_tracker/image_raw" to="/camera/rgb/image_raw"/>	
+  </node>
+
+  <!-- % rosrun servo_turtlebot visual_servo_turtlebot_node --> 
+  <node respawn="true" pkg="tracking_qr_code" type="visual_servo_minilab" name="visual_servo_minilab" output="screen">
+     <remap from="/object_position" to="/visp_auto_tracker/object_position" />
+     <remap from="/vs/pioneer/cmd_vel" to="cmd_vel" />
+    <remap from="/camera_info" to="/camera/rgb/camera_info"/>
+  </node> 
+ 
+</launch>
