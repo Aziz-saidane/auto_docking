@@ -138,7 +138,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/aziz/stag_ws/src/auto_docking/QR_CODE_generator/minibot_description/meshes/Marker0.dae</uri>
+              <uri>/home/aziz/catkin_ws/src/auto_docking/QR_CODE_generator/minibot_description/meshes/Marker0.dae</uri>
             </mesh>
           </geometry>
           <material>

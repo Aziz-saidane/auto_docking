@@ -11,7 +11,7 @@ $ mkdir -p ~/catkin_ws/src
 
 $ cd catkin_ws/src   
 
-$ git clone https://github.com/Jenifen/auto_docking.git
+$ git clone -b dev_features https://github.com/Jenifen/auto_docking.git
 
 $ cd ..
 
@@ -32,7 +32,7 @@ $  roslaunch minilab_demo_simulation minilab_demo_teleop.launch
 
 # MINI-LAB TRACKING QR LAUNCH
 ```
-$  roslaunch tracking visual-servo-minilab.launch 
+$  roslaunch tracking_qr_code visual-servo-minilab.launch 
 
 ```
 
@@ -41,6 +41,12 @@ $  roslaunch tracking visual-servo-minilab.launch
 
 ![3](https://user-images.githubusercontent.com/85931327/123717056-f1881c80-d873-11eb-9fa3-f4e2d9d12448.png)
 
+When we reach this point where the QR code is detected we launch this file to start the tracking :
+
+```
+$  rosrun tracking_qr_code test.py 
+
+```
 
 # MINI-LAB QR DECODE
 ```

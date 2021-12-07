@@ -247,7 +247,7 @@ void VS::poseCallback(const geometry_msgs::PoseStampedConstPtr& msg)
   	out_cmd_vel.linear.x = 0.5 ;}
     else if (  v[0] < -0.07 ) {
   	if (j ==0 ) { std::cout << "nooww------------------------------" << std::endl ;
-	             out_cmd_vel.linear.x = 5 ;
+	             out_cmd_vel.linear.x = 0 ;
 		    j=j+1 ; 
 	           }
         

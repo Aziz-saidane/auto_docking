@@ -13,10 +13,10 @@
   </node>
 
   <!-- % rosrun servo_turtlebot visual_servo_turtlebot_node --> 
-  <node respawn="true" pkg="tracking_qr_code" type="visual_servo_minilab" name="visual_servo_minilab" output="screen">
+   <!-- <node respawn="true" pkg="tracking_qr_code" type="visual_servo_minilab" name="visual_servo_minilab" output="screen">
      <remap from="/object_position" to="/visp_auto_tracker/object_position" />
      <remap from="/vs/pioneer/cmd_vel" to="cmd_vel" />
     <remap from="/camera_info" to="/camera/rgb/camera_info"/>
-  </node> 
- 
+  </node> --> 
+
 </launch>
