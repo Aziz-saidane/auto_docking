@@ -32,7 +32,7 @@ $  roslaunch minilab_demo_simulation minilab_demo_teleop.launch
 
 # MINI-LAB TRACKING QR LAUNCH
 ```
-$  roslaunch tracking visual-servo-minilab.launch 
+$  roslaunch tracking_qr_code visual-servo-minilab.launch 
 
 ```
 
